@@ -7,13 +7,13 @@ It takes as input experimental density, molecular mass and number of moleculas i
 
 ## Download
 
-"git clone https://github.com/apolionl/DensityNumber.git"
+'git clone https://github.com/apolionl/DensityNumber.git'
 
 ## Compile
 
 It was compiled with "g++ --version "(Ubuntu 7.3.0-16ubuntu3) 7.3.0.
 You can compiled it with the following flags:
-" -Wno-ignored-qualifiers -O3  -Wno-unused -Wno-parentheses -g3 -Wunused-function -Wunused-label -Wunused-value -Wunused-variable -Wall -Wextra -Wfloat-equal -Wundef "
+' -Wno-ignored-qualifiers -O3  -Wno-unused -Wno-parentheses -g3 -Wunused-function -Wunused-label -Wunused-value -Wunused-variable -Wall -Wextra -Wfloat-equal -Wundef '
 
 ## Contribute
 
@@ -25,9 +25,7 @@ Soon!!
 GitHub repo:
 https://github.com/apolionl/DensityNumber
 
-IRC:
-irc.freenode.net ; #CataclysmDDA
-http://webchat.freenode.net/?channels=#CataclysmDDA
+
 
 ## Frequently Asked Questions
 
