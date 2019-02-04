@@ -107,6 +107,3 @@ void header() {
     std::cout << "3. Solute experimental density \t\t[g/cm3] \n4. Solute molecular mass  \t\t[g/mol]\n" ;
     std::cout << "**************************************************************************************\n" ;
 }
-
-
-}
