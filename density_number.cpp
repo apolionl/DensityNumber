@@ -9,7 +9,7 @@ void header();
 class number_density
 {
 public:
-    long double density, mol_mass, num_density, side_box_lenght;
+    long double density, mol_mass, num_density, side_box_lenght, volume;
     number_density() {}
     number_density settings () {
         std::cout << "1. Phase experimental density \t[g/cm3]\n" ;
@@ -25,7 +25,8 @@ public:
         return 0;
     }
     number_density arista_box (long double num_mol){
-    side_box_lenght= std::cbrt(num_mol/num_density);
+    volume =num_mol/num_density
+    side_box_lenght= std::cbrt(volume);
     }
 
 };
@@ -70,15 +71,13 @@ int main()
 
 
     std::cout<< "\nMixture occupy :\t\t\t";
-    long double volume_mix = get_volume(mix_number_molecules,solvent.num_density);
-    std::cout<< volume_mix << "\t[Ang3]\n";
+    mixture.volume = (mix_number_molecules/solvent.num_density);
+    std::cout<< mixture.volume << "\t[Ang3]\n";
     std::cout<< "Mixture cubic box length :\t\t";
-    long double mix_box_length ;
-    mix_box_length= std::cbrt(volume_mix);
-    std::cout<< mix_box_length << "\t[Ang]\n";
-    long double number_density_mix ;
-    mixture.num_density=  (number_molecules_solute+number_molecules_solvent )/(volume_mix);
-    std::cout << "\nYour mixture number density is : \t" << number_density_mix << "\t[molecules/Ang3]\n" ;
+    mixture.side_box_lenght= std::cbrt(mixture.volume);
+    std::cout<< mixture.side_box_lenght << "\t[Ang]\n";
+    mixture.num_density=  (number_molecules_solute+number_molecules_solvent )/(mixture.volume);
+    std::cout << "\nYour mixture number density is : \t" << mixture.num_density << "\t[molecules/Ang3]\n" ;
     long double relative_mix_mol_mass ;
     relative_mix_mol_mass = ((number_molecules_solvent*solvent.mol_mass)+(number_molecules_solute*solute.mol_mass))/(number_molecules_solute+number_molecules_solvent);
     mixture.density = ((number_density_mix*cc3_to_ang3*relative_mix_mol_mass)/(avogadro));
