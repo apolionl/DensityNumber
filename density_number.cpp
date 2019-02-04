@@ -28,7 +28,6 @@ public:
     volume =num_mol/num_density
     side_box_lenght= std::cbrt(volume);
     }
-
 };
 
 
