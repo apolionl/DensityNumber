@@ -62,13 +62,11 @@ int main()
     std::cout<< "Total number of molecules in the mixture is :\t" <<  number_molecules_solute+number_molecules_solvent << '\n';
     solvent.arista_box(number_molecules_solvent);
 
-
     // This is the number of molecules of the mixture if all molecules were solvent
     // So one can obtain the new volumes, volumen mix
     long double mix_number_molecules; //
     mix_number_molecules = (number_molecules_solvent+(number_density_ratio*number_molecules_solute));
     number_density mixture;
-
 
     std::cout<< "\nMixture occupy :\t\t\t";
     mixture.volume = (mix_number_molecules/solvent.num_density);
@@ -86,8 +84,6 @@ int main()
     std::cout << "**************************************************************************************\n" ;
     std::cout << "**************************************************************************************\n" ;
     std::cout << "**************************************************************************************\n" ;
-
-
     return 0;
 
 }
