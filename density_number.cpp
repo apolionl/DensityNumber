@@ -42,10 +42,10 @@ int main()
     solute.indiv_number_density();
     std::cout << "Number density for  solvent and solute  \n ";
     std::cout << "\nThe number density ratio (solvent/solute) is:  \t"  ;
+ Number for later find the volume of the mixture
     long double number_density_ratio = solvent.num_density/solute.num_density ;
     std::cout << number_density_ratio << "\t\n" ;
 
-    std::cout << "**************************************************************************************\n" ;
     std::cout << "**************************************************************************************\n" ;
     std::cout << "\t\t\t\tNumber density of a mixture\n\n" ;
     std::cout << "As input it takes the number of molecules  (solvent + solute), \n" ;
@@ -66,25 +66,25 @@ int main()
     long double mix_number_molecules; //
     mix_number_molecules = (number_molecules_solvent+(number_density_ratio*number_molecules_solute));
     number_density mixture;
-
+//    Calculate appr. volume of mixture and the lenght of it's side, assuming it is cubic
     std::cout<< "\nMixture occupy :\t\t\t";
     mixture.volume = (mix_number_molecules/solvent.num_density);
     std::cout<< mixture.volume << "\t[Ang3]\n";
     std::cout<< "Mixture cubic box length :\t\t";
     mixture.side_box_lenght= std::cbrt(mixture.volume);
     std::cout<< mixture.side_box_lenght << "\t[Ang]\n";
+//    Calculate the number density of the mixture
     mixture.num_density=  (number_molecules_solute+number_molecules_solvent )/(mixture.volume);
     std::cout << "\nYour mixture number density is : \t" << mixture.num_density << "\t[molecules/Ang3]\n" ;
     long double relative_mix_mol_mass ;
     relative_mix_mol_mass = ((number_molecules_solvent*solvent.mol_mass)+(number_molecules_solute*solute.mol_mass))/(number_molecules_solute+number_molecules_solvent);
     mixture.density = ((number_density_mix*cc3_to_ang3*relative_mix_mol_mass)/(avogadro));
-    std::cout << "Your mixture  density is : \t\t" << density_mix << "\t[g/cc3]\n" ;
+    std::cout << "Your mixture  density is : \t\t" << mixture.density << "\t[g/cc3]\n" ;
     std::cout << "\t\t\t\t\tSayonara baby! \t\t\t\t\n" ;
     std::cout << "**************************************************************************************\n" ;
     std::cout << "**************************************************************************************\n" ;
     std::cout << "**************************************************************************************\n" ;
     return 0;
-
 }
 
 void header() {
