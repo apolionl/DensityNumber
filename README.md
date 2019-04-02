@@ -22,9 +22,9 @@ Copyright (C) 2017 Free Software Foundation, Inc.
 You can compiled it with the following flags:
 `-std=c++17 -Wno-ignored-qualifiers -O3  -Wno-unused -Wno-parentheses -g3 -Wunused-function -Wunused-label -Wunused-value -Wunused-variable -Wall -Wextra -Wfloat-equal -Wundef `
 
-## Contribute
+## To do list
 
-Soon!!
+Parse
 
 ## Community
 
